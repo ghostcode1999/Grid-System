@@ -1,0 +1,418 @@
+@layer base, grid, content;
+
+/* ------------------------ */
+/* GRID SYSTEM              */
+/* ------------------------ */
+
+@layer grid {
+  .wrapper {
+    --col-count: 12;
+    --content-max-width: 100%;
+    --min-inline-gutter: 1rem;
+    --col-width: var(--col-count);
+    --gap: 1rem;
+
+    /* Don't change this */
+    --content-col-width: calc(var(--content-max-width) / var(--col-count));
+
+    position: relative;
+    display: grid;
+    grid-template-columns:
+      minmax(var(--min-inline-gutter), 1fr)
+      repeat(var(--col-count), minmax(0, var(--content-col-width)))
+      minmax(var(--min-inline-gutter), 1fr);
+
+    /* For Visualisation */
+    /* border: 5px dotted orangered;
+  > * {
+    border: 2px dashed green;
+  } */
+  }
+
+  @media (width >= 36em) {
+    .wrapper {
+      --content-max-width: 33.75rem;
+    }
+  }
+
+  @media (width >= 48em) {
+    .wrapper {
+      --content-max-width: 45rem;
+    }
+  }
+
+  @media (width >= 62em) {
+    .wrapper {
+      --content-max-width: 60rem;
+    }
+  }
+
+  @media (width >= 75em) {
+    .wrapper {
+      --content-max-width: 71.25rem;
+    }
+  }
+
+  @media (width >= 87.5em) {
+    .wrapper {
+      --content-max-width: 82.5rem;
+    }
+  }
+
+  @media (width >= 36em) {
+    .cols-sm {
+      --content-max-width: 33.75rem;
+    }
+  }
+
+  @media (width >= 48em) {
+    .cols-md {
+      --content-max-width: 45rem;
+    }
+  }
+
+  @media (width >= 62em) {
+    .cols-lg {
+      --content-max-width: 60rem;
+    }
+  }
+
+  @media (width >= 75em) {
+    .cols-xl {
+      --content-max-width: 71.25rem;
+    }
+  }
+
+  @media (width >= 87.5em) {
+    .cols-xxl {
+      --content-max-width: 82.5rem;
+    }
+  }
+
+  script {
+    display: none !important;
+  }
+
+  .row {
+    --gap: 1rem;
+    --gap-row: var(--gap);
+    --gap-col: var(--gap);
+
+    display: grid;
+    grid-template-columns: repeat(var(--col-count), minmax(0, 1fr));
+    gap: var(--gap-row) var(--gap-col);
+
+    > * {
+      --col-start: auto;
+      --col-width: var(--col-count);
+
+      grid-column: var(--col-start) / span var(--col-width);
+    }
+  }
+
+  .wrapper > * {
+    --row-inline-gutter: max(
+      var(--min-inline-gutter),
+      calc((100% - var(--content-max-width)) / 2)
+    );
+
+    grid-column: var(--cols-start, 1) / calc(var(--cols-start, 1) * -1);
+    padding-inline: var(--row-inline-gutter);
+
+    &.wrapper {
+      --gap: 0;
+      --row-inline-gutter: 0;
+
+      grid-template-columns: subgrid;
+    }
+
+    &.no-gutter {
+      --row-inline-gutter: 0;
+    }
+  }
+
+  /* Auto create responsive equal-width cols */
+  .cols-auto {
+    grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
+  }
+
+  /* To create equal-width cols across all screen sizes */
+  .cols-equal {
+    grid-auto-flow: column;
+    grid-auto-columns: 1fr;
+  }
+
+  /* To have 2 columns per row */
+  .cols-2 {
+    > * {
+      --col-width: 6;
+    }
+  }
+
+  /* To have 3 columns per row */
+  .cols-3 {
+    > * {
+      --col-width: 4;
+    }
+  }
+
+  /* Responsive columns */
+  @media (width >= 36em) {
+    .sm-cols-2 {
+      > * {
+        --col-width: 6;
+      }
+    }
+  }
+
+  @media (width >= 48em) {
+    .md-cols-3 {
+      > * {
+        --col-width: 4;
+      }
+    }
+  }
+}
+
+/* ----------------------- */
+/* PAGE STYLES             */
+/* ----------------------- */
+
+@layer base {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+  }
+
+  body {
+    font-family: "Work Sans", sans-serif;
+    line-height: 1.6;
+    font-size: 1.125rem;
+  }
+
+  img {
+    display: block;
+    max-width: 100%;
+  }
+
+  label {
+    display: block;
+  }
+
+  button {
+    font: inherit;
+  }
+
+  .btn {
+    display: inline-block;
+    cursor: pointer;
+    font-size: 1rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    background: black;
+    color: white;
+    padding: 0.75em 2em;
+    border-radius: 100vmax;
+
+    &:hover {
+      background: #444;
+    }
+  }
+
+  .main__title {
+    font-size: clamp(2rem, 10cqi + 1rem, 5rem);
+    text-transform: uppercase;
+    line-height: 0.9;
+    margin-bottom: 0.2em;
+  }
+
+  h2 {
+    font-size: clamp(1.25rem, 3cqi + 1rem, 2rem);
+    line-height: 0.9;
+    text-transform: uppercase;
+
+    span {
+      font-weight: 300;
+      display: block;
+    }
+  }
+
+  .flow > *:where(:not(:first-child)) {
+    margin-block-start: var(--flow-spacer, 1rem);
+  }
+}
+
+@layer content {
+  .skip-to-content {
+    position: absolute;
+    inset-block-start: 4px;
+    z-index: 9999;
+    grid-column: -4 / -1;
+    display: inline-block;
+    width: 100%;
+    background-color: hsla(0, 0%, 0%, 0.85);
+  }
+
+  .primary-header,
+  .nav-list {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .primary-header {
+    position: sticky;
+    inset-block-start: 0;
+    z-index: 999;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 100%;
+    padding-block: 1em;
+    background-color: hsla(0, 0%, 100%, 0.5);
+  }
+
+  @supports (backdrop-filter: blur()) {
+    .primary-header {
+      backdrop-filter: blur(1.5rem);
+    }
+  }
+
+  .nav-list {
+    list-style: none;
+    font-weight: 500;
+  }
+
+  .hero {
+    --cols-start: 2;
+
+    padding-block: 3em;
+  }
+
+  .hero__title {
+    z-index: 2;
+  }
+
+  .hero__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  @media (width >= 48em) {
+    .hero {
+      grid-column-end: -1;
+    }
+
+    .hero__title {
+      grid-row: 1 / 2;
+      grid-column: 1 / 10;
+    }
+
+    .hero__img {
+      grid-row: 1 / 3;
+      grid-column: 7 / -1;
+    }
+
+    .hero__body {
+      grid-row: 2;
+      grid-column: 1 / 6;
+    }
+
+    .hero__body p {
+      margin-bottom: 0.5em;
+    }
+  }
+
+  .sales-points {
+    padding-block: 3rem;
+    background: #efefef;
+  }
+
+  .sales-points__sales-point {
+    display: grid;
+    gap: 1rem;
+    background-color: white;
+    padding: 2em 1em;
+  }
+
+  .sales-points .sales-points__sales-point,
+  .sales-points .sales-points__body {
+    justify-items: start;
+  }
+
+  .more-stuff {
+    row-gap: 1rem;
+    text-align: center;
+    padding-block: 1em;
+
+    @media (width >= 62em) {
+      --cols-start: 4;
+    }
+  }
+
+  .cta {
+    @media (width >= 36em) {
+      > * {
+        --col-width: 8;
+        --col-start: 3;
+      }
+    }
+
+    background: #222;
+    padding: 3em 1em;
+    text-align: center;
+    color: #f4f4f4;
+    column-gap: 1em;
+  }
+
+  .full-split {
+    --gap: 0;
+
+    padding-inline: 0;
+
+    @media (width >= 36em) {
+      --col-width: 6;
+    }
+  }
+
+  .full-split > *:not(img) {
+    background: #111;
+    color: white;
+    padding: 2em;
+    margin: 0;
+    text-align: center;
+  }
+
+  .full-split > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .v-center {
+    display: grid;
+    align-items: center;
+  }
+
+  .nested-row {
+    --gap: 2rem;
+
+    padding-block: 2em;
+
+    > * {
+      align-content: start;
+    }
+  }
+
+  .col {
+    display: grid;
+    gap: 1rem;
+    padding: 2em;
+    background-color: #111;
+    color: white;
+  }
+}

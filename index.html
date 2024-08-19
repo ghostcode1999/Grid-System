@@ -3,138 +3,103 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Grid System</title>
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=MuseoModerno:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-      rel="stylesheet"
-    />
-    <!-- External Libraries CSS Files -->
-    <link rel="stylesheet" href="vendors/fontAwesome/all.min.css" />
-    <!-- Main CSS Files -->
-    <link rel="stylesheet" href="css/main.css" />
+    <title>Grid System With CSS Grid</title>
+    <link rel="stylesheet" href="css//style.css" />
   </head>
-  <body>
-    <div class="grid-wrapper">
-      <header class="g-row">
-        <div class="header__inner g-row__inner">
-          <svg
-            class="logo g-col-3"
-            width="48"
-            height="48"
-            viewBox="0 0 48 48"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              fill-rule="evenodd"
-              clip-rule="evenodd"
-              d="M24 44.1379C35.1219 44.1379 44.1379 35.1219 44.1379 24C44.1379 12.8781 35.1219 3.86207 24 3.86207C12.8781 3.86207 3.86207 12.8781 3.86207 24C3.86207 35.1219 12.8781 44.1379 24 44.1379ZM24 48C37.2548 48 48 37.2548 48 24C48 10.7452 37.2548 0 24 0C10.7452 0 0 10.7452 0 24C0 37.2548 10.7452 48 24 48Z"
-            />
-            <path
-              fill-rule="evenodd"
-              clip-rule="evenodd"
-              d="M24.069 8.48097C17.632 8.48097 12.4138 13.6992 12.4138 20.1361V34.69C12.4138 35.7573 13.279 36.6225 14.3463 36.6225C15.4135 36.6225 16.2787 35.7573 16.2787 34.69V32.3952C16.2787 31.3279 17.1439 30.4627 18.2112 30.4627C19.2785 30.4627 20.1436 31.3279 20.1436 32.3952V32.5764C20.1436 33.677 21.0359 34.5692 22.1365 34.5692H22.4384C23.3723 34.5692 24.1294 33.8122 24.1294 32.8783C24.1294 31.9445 24.8864 31.1874 25.8203 31.1874H26.7865C27.4535 31.1874 27.9943 31.7282 27.9943 32.3952C27.9943 33.0623 28.535 33.603 29.2021 33.603H30.3495C31.1833 33.603 31.8592 34.2789 31.8592 35.1127C31.8592 35.9465 32.5351 36.6225 33.3689 36.6225H33.7917C34.8589 36.6225 35.7241 35.7573 35.7241 34.69V20.1361C35.7241 13.6992 30.5059 8.48097 24.069 8.48097ZM18.8151 19.2303C18.8151 18.4298 19.464 17.781 20.2644 17.781C21.0649 17.781 21.7138 18.4298 21.7138 19.2303V21.7667C21.7138 22.5671 21.0649 23.216 20.2644 23.216C19.464 23.216 18.8151 22.5671 18.8151 21.7667V19.2303ZM27.9943 17.781C27.1938 17.781 26.5449 18.4298 26.5449 19.2303V21.7667C26.5449 22.5671 27.1938 23.216 27.9943 23.216C28.7947 23.216 29.4436 22.5671 29.4436 21.7667V19.2303C29.4436 18.4298 28.7947 17.781 27.9943 17.781Z"
-            />
-          </svg>
-          <nav>
-            <button class="nav__toggler">
-              <i class="fa fa-bars fa-lg"></i>
-            </button>
-            <ul>
-              <li><a href="#">Home</a></li>
-              <li><a href="#">About</a></li>
-              <li><a href="#">Services</a></li>
-              <li><a href="#">Blog</a></li>
-              <li><a href="#">Contact</a></li>
-            </ul>
-          </nav>
-        </div>
-        <div class="progress-bar"></div>
-      </header>
-      <div class="hero gap-3">
-        <h1 class="main__title hero__title heading-2">
-          Create robust grid system using css grid
+  <body class="wrapper">
+    <!-- <button class="skip-to-content | btn">Skip To Content</button> -->
+    <header class="primary-header">
+      <div>
+        <img src="imgs/logo.svg" alt="logo" />
+      </div>
+
+      <nav>
+        <ul class="nav-list">
+          <li>Home</li>
+          <li>About</li>
+          <li>Blog</li>
+          <li>Contact</li>
+        </ul>
+      </nav>
+    </header>
+    <main class="wrapper">
+      <div class="hero | row no-gutter">
+        <h1 class="main__title hero__title">
+          Subgrid is what grid was meant to be
         </h1>
         <img class="hero__img" src="imgs/hero.png" alt="" class="hero-img" />
-        <div class="hero__body">
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-          <a class="btn" href="#" data-type="primary">More info</a>
+        <div class="hero__body | flow">
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores,
+            sunt voluptatum! Accusantium quis expedita sit!
+          </p>
+          <a class="btn" href="#">More info</a>
         </div>
       </div>
 
-      <div class="sales-points g-row g-cols-sm-2">
-        <div class="g-row__inner">
-          <div class="sales-points__sales-point">
-            <h2 class="sales-points__title">Easier</h2>
-            <p class="sales-point__body">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam
-              mollitia optio doloremque?
-            </p>
-            <a href="#">Read more</a>
-          </div>
-          <div class="sales-points__sales-point">
-            <h2 class="sales-points__title">Faster</h2>
-            <p class="sales-point__body">
-              Delectus perferendis doloribus mollitia quibusdam facere eius!
-            </p>
-            <a href="#">Read more</a>
+      <div class="sales-points | row sm-cols-2 lg-cols-3">
+        <div class="sales-points__sales-point">
+          <h2 class="sales-points__title">Easier</h2>
+          <div class="sales-points__body row">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+            <button class="btn">Explore More...</button>
           </div>
         </div>
-      </div>
-
-      <div class="more-stuff g-row g-cols-sm-2">
-        <div class="g-row__inner">
-          <div
-            class="sales-points__sales-point g-col-sm-6 g-col-md-6 offset-start-md-2"
-          >
-            <h2 class="sales-points__title">Faster</h2>
-            <p class="sales-point__body">
-              Delectus perferendis doloribus mollitia quibusdam facere eius!
-            </p>
+        <div class="sales-points__sales-point">
+          <h2 class="sales-points__title">Consistent</h2>
+          <div class="sales-points__body row">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+            <button class="btn">Explore More...</button>
           </div>
-          <div class="sales-points__sales-point g-col-sm-6 g-col-md-4">
-            <h2 class="sales-points__title">Creative</h2>
-            <p class="sales-point__body">
-              Nostrum possimus, porro ipsam iure soluta est!
-            </p>
-          </div>
-          <div class="sales-points__sales-point g-col-sm-6 g-col-md-8">
-            <h2 class="sales-points__title">Awesome</h2>
-            <p class="sales-point__body">
-              Nostrum possimus, porro ipsam iure soluta est!
-            </p>
-          </div>
-          <div class="sales-points__sales-point g-col-sm-6 g-col-md-4">
-            <h2 class="sales-points__title">Free</h2>
-            <p class="sales-point__body">
-              Nostrum possimus, porro ipsam iure soluta est!
-            </p>
+        </div>
+        <div class="sales-points__sales-point">
+          <h2 class="sales-points__title">Faster</h2>
+          <div class="sales-points__body row">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+            <button class="btn">Explore More...</button>
           </div>
         </div>
       </div>
 
-      <div class="cta g-row">
-        <div class="g-row__inner">
-          <div>
-            <h2>Sign up for our newsletter!</h2>
-            <p>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illo
-              consequuntur repellat facilis provident dolorum laborum blanditiis
-              veritatis, ipsa sequi cumque soluta quod fugiat dolorem quam.
-            </p>
-            <label
-              >Your email: <input type="text" placeholder="sam@example.com"
-            /></label>
-          </div>
+      <div class="more-stuff | row sm-cols-2">
+        <div class="sales-points__sales-point">
+          <h2 class="sales-points__title">Faster</h2>
+          <p class="sales-point__body">
+            Delectus perferendis doloribus mollitia quibusdam facere eius!
+          </p>
+        </div>
+        <div class="sales-points__sales-point">
+          <h2 class="sales-points__title">Consistent</h2>
+          <p class="sales-point__body">
+            Delectus perferendis doloribus mollitia quibusdam facere eius!
+          </p>
+        </div>
+        <div class="sales-points__sales-point">
+          <h2 class="sales-points__title">Easier</h2>
+          <p class="sales-point__body">
+            Delectus perferendis doloribus mollitia quibusdam facere eius!
+          </p>
         </div>
       </div>
 
-      <div class="full-split g-row g-cols-sm-2 g-start-1">
-        <div class="g-row__inner">
-          <img src="imgs/img.jpg" alt="" />
-          <p class="v-center">
+      <div class="cta | row">
+        <div class="flow">
+          <h2>Sign up for our newsletter!</h2>
+          <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illo
+            consequuntur repellat facilis provident dolorum laborum blanditiis
+            veritatis, ipsa sequi cumque soluta quod fugiat dolorem quam.
+          </p>
+          <label
+            >Your email: <input type="text" placeholder="sam@example.com"
+          /></label>
+        </div>
+      </div>
+
+      <div class="full-split | row sm-cols-2">
+        <img src="imgs/img.jpg" alt="" />
+        <div class="v-center">
+          <p>
             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Neque
             quisquam distinctio laudantium velit similique a ducimus, quae sint,
             adipisci quidem eaque voluptate illum aut. Dolorum inventore illum
@@ -142,8 +107,6 @@
           </p>
         </div>
       </div>
-    </div>
-
-    <script src="vendors/fontAwesome/all.min.js"></script>
+    </main>
   </body>
 </html>
