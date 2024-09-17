@@ -4,14 +4,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Grid System With CSS Grid</title>
-    <link rel="stylesheet" href="css//style.css" />
+    <link rel="icon" href="imgs/favicon.png" type="image/png">
+    <link rel="stylesheet" href="css/style.css" />
   </head>
   <body class="wrapper">
     <!-- <button class="skip-to-content | btn">Skip To Content</button> -->
     <header class="primary-header">
-      <div>
-        <img src="imgs/logo.svg" alt="logo" />
-      </div>
+      <a href="index.html" class="logo"> SimplTag </a>
 
       <nav>
         <ul class="nav-list">
@@ -23,11 +22,11 @@
       </nav>
     </header>
     <main class="wrapper">
-      <div class="hero | row no-gutter">
+      <section class="hero | row content no-gutter">
         <h1 class="main__title hero__title">
           Subgrid is what grid was meant to be
         </h1>
-        <img class="hero__img" src="imgs/hero.png" alt="" class="hero-img" />
+        <img class="hero__img" src="imgs/hero.jpg" alt="" class="hero-img" />
         <div class="hero__body | flow">
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores,
@@ -35,33 +34,29 @@
           </p>
           <a class="btn" href="#">More info</a>
         </div>
-      </div>
+      </section>
 
-      <div class="sales-points | row sm-cols-2 lg-cols-3">
+      <section class="sales-points | row sm-cols-2 lg-cols-3">
         <div class="sales-points__sales-point">
-          <h2 class="sales-points__title">Easier</h2>
-          <div class="sales-points__body row">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
-            <button class="btn">Explore More...</button>
-          </div>
+          <h2>Easier</h2>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+          <button class="btn">Explore More...</button>
+        </div>
+        <div class="sales-points__sales-point offset-start-1 lg-col-5">
+          <h2>Consistent</h2>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+          <button class="btn">Explore More...</button>
         </div>
         <div class="sales-points__sales-point">
-          <h2 class="sales-points__title">Consistent</h2>
-          <div class="sales-points__body row">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
-            <button class="btn">Explore More...</button>
-          </div>
+          <h2>Faster</h2>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+          <button class="btn">Explore More...</button>
         </div>
-        <div class="sales-points__sales-point">
-          <h2 class="sales-points__title">Faster</h2>
-          <div class="sales-points__body row">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
-            <button class="btn">Explore More...</button>
-          </div>
-        </div>
-      </div>
+      </section>
 
-      <div class="more-stuff | row sm-cols-2">
+      <section class="more-stuff | row sm-cols-2">
+        <h2 class="col-12 | text-center">More Stuff Here</h2>
+        <p class="col-12 | text-center lead">CSS Grid make my life easier, you can make rows & columns easily, overlap things, break your grid system rules with no side effects and much much more...</p>
         <div class="sales-points__sales-point">
           <h2 class="sales-points__title">Faster</h2>
           <p class="sales-point__body">
@@ -80,9 +75,9 @@
             Delectus perferendis doloribus mollitia quibusdam facere eius!
           </p>
         </div>
-      </div>
+      </section>
 
-      <div class="cta | row">
+      <section class="cta | row">
         <div class="flow">
           <h2>Sign up for our newsletter!</h2>
           <p>
@@ -90,14 +85,15 @@
             consequuntur repellat facilis provident dolorum laborum blanditiis
             veritatis, ipsa sequi cumque soluta quod fugiat dolorem quam.
           </p>
-          <label
-            >Your email: <input type="text" placeholder="sam@example.com"
-          /></label>
+          <form>
+            <label for="">Your email:</label>
+            <input type="text" placeholder="sam@example.com" />
+          </form>
         </div>
-      </div>
+      </section>
 
-      <div class="full-split | row sm-cols-2">
-        <img src="imgs/img.jpg" alt="" />
+      <section class="full-split | row sm-cols-2">
+        <img src="imgs/full.png" alt="" />
         <div class="v-center">
           <p>
             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Neque
@@ -106,7 +102,41 @@
             molestiae atque possimus?
           </p>
         </div>
-      </div>
+      </section>
+
+      <section class="showcase | row sm-cols-2 lg-cols-3">
+        <h2 class="col-12 | text-center">Time to eat</h2>
+        <p class="col-12 | lead text-center">
+          Some description for this section, let's call it a section-desc for
+          example, it's just for showcase
+        </p>
+
+        <div class="showcase-card showcase-card--special">
+          <img src="imgs/img-1.jpg" alt="some text" />
+          <h3>Excited, Right?</h3>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+        </div>
+        <div class="showcase-card">
+          <img src="imgs/img-2.jpg" alt="some text" />
+          <h3>Read Docs</h3>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+        </div>
+        <div class="showcase-card">
+          <img src="imgs/img-3.jpg" alt="some text" />
+          <h3>Start Coding</h3>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+        </div>
+        <div class="showcase-card">
+          <img src="imgs/img-4.jpg" alt="some text" />
+          <h3>And Have Fun</h3>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+        </div>
+        <div class="showcase-card">
+          <img src="imgs/img-5.jpg" alt="some text" />
+          <h3>And That's All</h3>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+        </div>
+      </section>
     </main>
   </body>
 </html>

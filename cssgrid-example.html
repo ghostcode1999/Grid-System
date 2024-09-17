@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>CSS Grid Example</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Code Crafter">
+    <meta name="description" content="12 Column Grid created by Code Crafter using CSS Grid.">
+    <meta name="keywords" content="CSS Grid">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@codecrafter">
+    <meta name="twitter:title" content="Code Crafter">
+    <meta name="twitter:description" content="12 Column Grid created by Code Crafter using CSS Grid.">
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  
+  <body class="wrapper-fluid" id="examples-page">  
+
+    <main class="wrapper-fluid flow">
+          <h1 class="main__title">CSS Grid: 12 Column Grid Example</h1>
+      
+          <h2>Columns</h2>
+
+      <div class="grid-example flow">  
+
+        <div class="row sm-cols-12">
+          <div>col-1</div>
+          <div>col-1</div>
+          <div>col-1</div>
+          <div>col-1</div>
+          <div>col-1</div>
+          <div>col-1</div>
+          <div>col-1</div>
+          <div>col-1</div>
+          <div>col-1</div>
+          <div>col-1</div>
+          <div>col-1</div>
+          <div>col-1</div>
+        </div>
+        
+        <div class="row sm-cols-6">
+          <div>col-2</div>
+          <div>col-2</div>
+          <div>col-2</div>
+          <div>col-2</div>
+          <div>col-2</div>
+          <div>col-2</div>
+        </div>
+        
+        <div class="row sm-cols-4">
+          <div>col-3</div>
+          <div>col-3</div>
+          <div>col-3</div>
+          <div>col-3</div>
+        </div>
+        
+        <div class="row sm-cols-3">
+          <div>col-4</div>
+          <div>col-4</div>
+          <div>col-4</div>
+        </div>
+        
+        <div class="row">
+          <div class="sm-col-5">col-5</div>
+          <div class="sm-col-7">col-7</div>
+        </div>
+        
+        <div class="row sm-cols-2">
+          <div>col-6</div>
+          <div>col-6</div>
+        </div>
+        
+        <div class="row">
+          <div class="sm-col-8">col-8</div>
+          <div class="sm-col-4">col-4</div>
+        </div>
+        
+        <div class="row">
+          <div class="sm-col-9">col-9</div>
+          <div class="sm-col-3">col-3</div>
+        </div>
+        
+        <div class="row">
+          <div class="sm-col-10">col-10</div>
+          <div class="sm-col-2">col-2</div>
+        </div>
+        
+        <div class="row">
+          <div class="sm-col-11">col-11</div>
+          <div class="sm-col-1">col-1</div>
+        </div>
+        
+        <div class="row">
+          <div class="sm-col-12">col-12</div>
+        </div>
+        
+        <div class="row">
+          <div class="sm-col-3">col-3</div>
+          <div class="sm-col-3">col-3</div>
+          <div class="sm-col-1">col-1</div>
+          <div class="sm-col-1">col-1</div>
+          <div class="sm-col-1">col-1</div>
+          <div class="sm-col-1">col-1</div>
+          <div class="sm-col-1">col-1</div>
+          <div class="sm-col-1">col-1</div>
+        </div>
+
+      </div>
+
+          <h2>Columns with offsets</h2>
+
+      <div class="grid-example flow">  
+  
+        <div class="row">
+          <div class="sm-col-4">col-4</div>
+          <div class="sm-col-2">col-2</div>
+          <div class="sm-col-2 offset-start-2">col-2, offset-start-2</div>
+          <div class="sm-col-2">col-2</div>
+        </div> 
+        
+        <div class="row">
+          <div class="sm-col-4 offset-end-4">col-4, offset-end-4</div>
+          <div class="sm-col-4">col-4</div>
+        </div>
+        
+        <div class="row">
+          <div class="sm-col-5 offset-start-1">col-5, offset-start-1</div>
+          <div class="sm-col-6">col-6</div>
+        </div> 
+        
+        <div class="row">
+          <div class="sm-col-8 offset-start-3">col-8, offset-start-3</div>
+          <div class="sm-col-1">col-1</div>
+        </div>
+        
+        <div class="row">
+          <div class="sm-col-4">col-4</div>
+          <div class="sm-col-2">col-2</div>
+          <div class="sm-col-2 offset-start-2">col-2, offset-start-2</div>
+          <div class="sm-col-2">col-2</div>
+        </div> 
+        
+        <div class="row">
+          <div class="sm-col-3">col-3</div>
+          <div class="sm-col-2 offset-start-7">col-2, offset-start-7</div>
+        </div>
+        
+        <div class="row">
+          <div class="sm-col-1">col-1</div>
+          <div class="sm-col-3 offset-start-2">col-3, offset-start-2</div>
+          <div class="sm-col-1">col-1</div>
+          <div class="sm-col-1">col-1</div>
+          <div class="sm-col-2 offset-start-1">col-2, offset-start-1</div>
+          <div class="sm-col-1">col-1</div>
+        </div>
+
+      </div>
+
+          <h2>Columns with offsets defined by breakpoints</h2>
+
+      <div class="grid-example flow"> 
+
+        <div class="row">
+          <div class="md-col-6 lg-col-3">md-col-6, lg-col-3</div>
+          <div class="md-col-6 lg-col-3">md-col-6, lg-col-3</div>
+          <div class="sm-col-6 md-col-3 lg-col-1">sm-col-6 md-col-3 lg-col-1</div>
+          <div class="sm-col-6 md-col-3 lg-col-1">sm-col-6 md-col-3 lg-col-1</div>
+          <div class="sm-col-6 md-col-3 lg-col-1">sm-col-6 md-col-3 lg-col-1</div>
+          <div class="sm-col-6 md-col-2 lg-col-1 md-offset-start-1 lg-offset-start-2">sm-col-6 md-col-2 lg-col-1 md-offset-start-1 lg-offset-start-2</div>
+        </div>
+        
+        <div class="row">
+          <div class="sm-col-6 lg-col-3">sm-col-6 lg-col-3</div>
+          <div class="sm-col-6 lg-col-2">sm-col-6 lg-col-2</div>
+          <div class="sm-col-4 lg-col-2 lg-offset-start-2">sm-col-4 lg-col-2 lg-offset-start-2</div>
+          <div class="sm-col-4 lg-col-2">sm-col-4 lg-col-2</div>
+          <div class="sm-col-4 lg-col-1">sm-col-4 lg-col-1</div>
+        </div> 
+        
+        <div class="row">
+          <div class="sm-col-4 md-col-2">sm-col-4 md-col-2</div>
+          <div class="sm-col-6 md-col-4 sm-offset-start-2 md-offset-start-6">sm-col-6 md-col-4 sm-offset-start-2 md-offset-start-6</div>
+        </div>
+        
+        <div class="row">
+          <div class="sm-col-11 md-col-5 sm-offset-start-1">sm-col-11 md-col-5 sm-offset-start-1</div>
+          <div class="sm-col-6 md-col-2">sm-col-6 md-col-2</div>
+          <div class="sm-col-6 md-col-3 md-offset-start-1">sm-col-6 md-col-3 md-offset-start-1</div>
+        </div> 
+        
+        <div class="row">
+          <div class="sm-col-7 sm-offset-end-1 md-offset-start-3 md-offset-end-0">sm-col-7 sm-offset-end-1 md-offset-start-3 md-offset-end-0</div>
+          <div class="sm-col-4 md-col-2">sm-col-4 md-col-2</div>
+        </div>
+        
+        <div class="row">
+          <div class="sm-col-6 lg-col-4">sm-col-6 lg-col-4</div>
+          <div class="sm-col-6 md-col-2">sm-col-6 md-col-2</div>
+          <div class="sm-col-6 md-col-2 lg-offset-start-2">sm-col-6 md-col-2 lg-offset-start-2</div>
+          <div class="sm-col-6 md-col-2">sm-col-6 md-col-2</div>
+        </div> 
+        
+        <div class="row" style="">
+          <div class="sm-col-6 md-col-3">sm-col-6 md-col-3</div>
+          <div class="sm-col-4 md-col-2 sm-offset-start-2 md-offset-start-7">sm-col-4 md-col-2 sm-offset-start-2 md-offset-start-7</div>
+        </div>
+        
+        <div class="row">
+          <div class="sm-col-3 lg-col-1 lg-offset-end-2">sm-col-3 lg-col-1 lg-offset-end-2</div>
+          <div class="sm-col-3">sm-col-3</div>
+          <div class="sm-col-3 lg-col-1">sm-col-3 lg-col-1</div>
+          <div class="sm-col-3 lg-col-1" style="--offset-end: 1">sm-col-3 lg-col-1 lg-offset-end-1</div>
+          <div class="sm-col-6 md-col-2">sm-col-6 md-col-2</div>
+          <div class="sm-col-6 md-col-10 lg-col-1">sm-col-6 md-col-10 lg-col-1</div>
+        </div>
+
+      </div>
+
+    </main>
+
+    <footer class="content">
+          <p><a href="https://code-crafter.github.io/" target="_blank" rel="noopener" aria-label="Links to Code Crafter's portfolio website" title="Code Crafter's Portfolio Website">Code Crafter's Portfolio</a></p>
+          <p>&copy; Copyright&nbsp;<script>document.write(new Date().getFullYear())</script> Code Crafter</p>
+    </footer>
+
+  </body>
+</html>
